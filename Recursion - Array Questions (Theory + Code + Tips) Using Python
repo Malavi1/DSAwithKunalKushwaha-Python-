@@ -1,0 +1,58 @@
+#CHECKING WEATHER THE ARRAY SORTED OR NOT
+_________________________________________
+def sort(n,index):
+    if index == len(n)-1:
+        return True
+    return (n[index]<n[index+1]) and sort(n,index+1)
+print(sort([1,2,6,4],0))
+
+'''RETURNING THE BOOBLEAN EXPRESSION'''
+   ___________________________________
+
+def find(l,t,index):
+    if index == len(l):
+        return '-1'
+    return l[index]==t or find(l,t,index+1)
+print(find([1,2,3,3],0,0))
+
+'''RETURNING THE INDEX VALUE'''
+   ____________________________
+
+def find1(l,t,index):
+    if index == len(l):
+        return '-1'
+    elif l[index] == t:
+        return index 
+    else:
+        return find1(l,t,index+1)
+        
+print(find1([1,2,3,4],3,0))
+
+'''RETURNING THE SAME INDEX VALUE BY TRAVESEING THE REVERSELY'''
+______________________________________________________________
+
+def find2(l,t,index):
+    if index == -1:
+        return '-1'
+    elif l[index]==t:
+        return index
+    return find2(l,t,index-1)
+print(find2([1,2,3,4],9,len([1,2,3,4])-1))
+
+
+
+
+'''REUTRNING THE LIST OF THE INDEXES BY TAKING THE EMPTY LIST IN THE FUCTION ITSELF'''
+________________________________________________________________________________________
+
+
+def return_list(l,t,index):
+    l1=[]
+    if index == len(l):
+        return l1
+    elif l[index]==t:
+        l1.append(index)
+    ans= return_list(l,t,index+1)
+    l1.extend(ans)
+    return l1
+print(return_list([1,4,5,4],4,0))
