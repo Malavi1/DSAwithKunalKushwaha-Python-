@@ -1,1 +1,89 @@
+<Patteren Question using Recursion>#Uppertriangle
+_________________________________________________
 
+1)
+
+def triangle(r,c):
+    if r == 0:
+        return
+    elif c<r:
+        print('*',end=' ')
+        return triangle(r,c+1)
+    else:
+        print()
+        return triangle(r-1,0)
+print(triangle(5,0))
+
+
+
+sample o/p:-  * * * * *
+              * * * *
+              * * * 
+              * *
+              *
+
+
+                      # lowertriangle
+2)
+  def triangle2(r,c):
+    if r == 0:
+        return
+    elif c<r:
+        triangle2(r,c+1)
+        print('*',end=' ')
+    else:
+        triangle2(r-1,0)
+        print()
+print(triangle2(5,0))
+
+
+sample o/p:-   *
+               * *
+               * * *
+               * * * * 
+               * * * * * 
+
+         <Bubble sort using recursion>      
+          _______________________________
+
+def bubble(l,r,c):
+    if r == 0:
+        return l
+    elif c<r:
+        if l[c] > l[c+1]:
+            temp=l[c]
+            l[c]=l[c+1]
+            l[c+1]=temp
+        return  bubble(l,r,c+1)
+    else:
+        return bubble(l,r-1,0)
+l=[4,3,2,1]
+print(bubble(l,len(l)-1,0))
+
+
+sample o/p:-  [1,2,3,4]
+                    
+                    Seletion sort
+                  __________________
+
+
+def selection(l,r,c,max_index):
+    if r == 0:
+        return l
+    elif c<r:
+        if l[c] > l[max_index]:
+            selection(l, r , c+1 , c)
+        else:
+            selection(l,r,c+1,max_index)
+    else:
+        temp=l[max_index]
+        l[max_index]=l[r-1]
+        l[r-1]=temp
+        selection(l,r-1,0,0)
+    return
+l=[6,4,5,1,2]
+print(selection(l,len(l),0,0))
+    
+sample o/p :-  [1,2,3,4,5,6]
+                
+    
